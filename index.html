@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    
+    <main class="content-wrapper">
+        <div class="container">
+
+            <!-- Banner Section -->
+            <section class="banner-area d-flex justify-content-between">
+                <div class="banner-area-text">
+                    <h2>The Completely Powerful Booking System for Barbers</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maecenas sed faucibus volutpat id eleifend quis elementum.</p>
+                    <a href="#" class="theme-btn">Get Started</a>
+                </div>
+
+                <div class="banner-area-img">
+                    <img src="images/banner-img.png" alt="Banner Image">
+                </div>
+            </section>
+
+            <!-- Form Section -->
+            <section class="reg-form d-flex justify-content-between">
+                <div class="reg-form-wrapper">
+                    <div class="reg-form-inner">
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="th-textbox" name="full-name" placeholder="Please enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="th-textbox" name="email" placeholder="Please enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <div class="select-field phone-field th-textbox">
+                                    <span class="selected"><img src="images/de.svg" alt="flag"></span>
+                                    <div class="toggle-options">
+                                        <span><img src="images/ca.svg" alt="flag"></span>
+                                        <span><img src="images/cm.svg" alt="flag"></span>
+                                        <span><img src="images/de.svg" alt="flag"></span>
+                                    </div>
+                                </div>
+                                <input type="text" class="th-textbox phone-text" name="phone-number" placeholder="(+49) 000 000 000">
+                            </div>
+                            <div class="form-group">
+                                <label>Business Name</label>
+                                <input type="text" class="th-textbox" name="business-name" placeholder="Please enter your business Name here">
+                            </div>
+                            <div class="form-group">
+                                <label>Country</label>
+                                <div class="select-field th-textbox">
+                                    <input type="hidden" class="th-textbox country" name="country">
+                                    <span class="selected"><img src="images/de.svg" alt="flag"> Germany</span>
+                                    <div class="toggle-options">
+                                        <span><img src="images/ca.svg" alt="flag"> Canada</span>
+                                        <span><img src="images/cm.svg" alt="flag"> Cameroon</span>
+                                        <span><img src="images/de.svg" alt="flag"> Germany</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" value="yes" id="agree-policy" class="th-checkbox">
+                                <label for="agree-policy">I agree to all terms & conditions and policy features.</label>
+                            </div>
+                            <div class="form-group form-bottom align-center">
+                                <input type="submit" class="theme-btn no-shadow" value="Create Your Account">
+                                <label>Already have a Nearcut account? <a href="#">Login Here</a></label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="reg-form-text">
+                    <h3>Complete the registration<br> form to get started</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maecenas sed faucibus volutpat id eleifend quis elementum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maecenas sed faucibus volutpat id eleifend quis elementum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maecenas sed faucibus volutpat id eleifend quis elementum.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="f-logo"><a href="#"><img src="images/nearcut.svg" alt="Nearcut"></a></div>
+            <p>So much more than a booking system</p>
+            <ul class="contact-info">
+                <li>
+                    <a href="tel:01606277565">
+                        <img src="images/phone-icon.svg" alt="Phone">
+                        01 606 277 565
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:lorem@dummy.com">
+                        <img src="images/email-icon.svg" alt="Email">
+                        Email Us
+                    </a>
+                </li>
+            </ul>
+            <div class="social-icons">
+                <h4>Social Media</h4>
+                <ul class="social-icons-wrap">
+                    <li><a href="#"><img src="images/facebook-icon.svg" alt="facebook"></a></li>
+                    <li><a href="#"><img src="images/instagram-icon.svg" alt="instagram"></a></li>
+                    <li><a href="#"><img src="images/twitter-icon.svg" alt="twitter"></a></li>
+                    <li><a href="#"><img src="images/linkedin-icon.svg" alt="linkedin"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var select_field = $('.select-field');
+            var options = $('.toggle-options');
+            var form_group = $('.form-group');
+
+            select_field.click(function() {
+                $(this).find(options).slideToggle();
+            });
+
+            options.find('span').click(function() {
+                var text = $(this).html();
+                $(this).parentsUntil(form_group).find('span.selected').html(text);
+            });
+        });
+    </script>
+</body>
+</html>
